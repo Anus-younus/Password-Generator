@@ -1,0 +1,50 @@
+.container{
+  background-color: rgb(99, 95, 95);
+  border-radius: 10px;
+  height: 200px;
+  width: 500px;
+  padding: 20px;
+  flex-direction: column;
+  color: #fff;
+  gap: 10px;
+}
+
+.password{
+  background-color: #fff;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: orange;
+  height: 30px;
+  width: 400px;
+}
+
+.btn{
+  background-color: blue;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #fff;
+
+}
+.d-flex{
+  display: flex;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.align{
+  align-items: center;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
