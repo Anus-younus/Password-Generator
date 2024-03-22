@@ -1,10 +1,14 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import "./App.css";
 function App() {
+  const passwordRef = useRef(null);
   const [length, setLength] = useState(8);
   const [password, setPassword] = useState("");
   const [character, setCharacter] = useState("");
   const [number, setNumber] = useState("");
+  const copyClipBoard = useCallback(() => {
+    window.navigator.clipboard.writeText(password);
+  });
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -29,10 +33,21 @@ function App() {
         </div>
         <div className="child-container d-flex justify-center align">
           <input type="text" className="password" value={password} />
-          <input className="btn cursor-pointer" type="button" value={"copy"} />
+          <input
+            className="btn cursor-pointer"
+            type="button"
+            value={"copy"}
+            onClick={copyClipBoard}
+          />
         </div>
         <div className="child-container">
-          <input type="range" onChange={(e)=>setLength(e.target.value)} value={length} min={8} max={40}/>
+          <input
+            type="range"
+            onChange={(e) => setLength(e.target.value)}
+            value={length}
+            min={8}
+            max={40}
+          />
           <label>Length:{length}</label>
           <label>Character:{character}</label>
           <input
@@ -48,7 +63,8 @@ function App() {
             type="checkbox"
             onClick={() => {
               setNumber((prev) => !prev);
-            }}/>
+            }}
+          />
         </div>
       </div>
     </div>
